@@ -1,0 +1,14 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 760px; margin: 0 auto; padding: 24px; }
+h1 { margin-top: 0; }
+section { border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding: 12px 0 20px; }
+section > label { display: block; margin: 12px 0; }
+form { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 8px; }
+form label { grid-row: 1; }
+input:not([type="checkbox"]), select, button { box-sizing: border-box; padding: 8px; }
+input:not([type="checkbox"]), select { width: 100%; }
+li { margin: 8px 0; overflow-wrap: anywhere; }
+li button { margin-left: 12px; }
+output { display: block; min-height: 1.4em; margin-top: 12px; }
+@media (max-width: 560px) { form { grid-template-columns: 1fr; } form label { grid-row: auto; } }

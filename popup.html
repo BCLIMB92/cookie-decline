@@ -3,14 +3,23 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Cookie Consent Guard</title>
+        <title>GuardMe</title>
         <link rel="stylesheet" href="popup.css" />
     </head>
     <body>
         <main>
-            <h1>Cookie Consent Guard</h1>
-            <p>Your extension is ready.</p>
-            <button id="action" type="button">Run action</button>
+            <h1>GuardMe</h1>
+            <p id="site-label"></p>
+            <label for="site-rule">Tracker rule for this domain</label>
+            <select id="site-rule">
+                <option value="default">Use default rules</option>
+                <option value="allow">Allowlist this domain</option>
+                <option value="block">Block this domain as a tracker</option>
+            </select>
+            <p id="tracker-count" aria-live="polite"></p>
+            <button id="temporary-allow" type="button">Allow this site for 30 minutes</button>
+            <button id="reader-mode" type="button">Open in reader mode</button>
+            <button id="settings" type="button">Privacy settings and activity</button>
             <output id="status" aria-live="polite"></output>
         </main>
         <script src="popup.js"></script>

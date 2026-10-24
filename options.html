@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>GuardMe Settings</title>
+        <link rel="stylesheet" href="options.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Privacy settings</h1>
+            <p>Protections apply across Firefox unless a site rule says otherwise.</p>
+            <section>
+                <h2>Exception list</h2>
+                <p>Domains here are excluded from GuardMe's automatic consent actions and tracker blocking. Subdomains are included.</p>
+                <form id="exception-form">
+                    <label for="exception-host">Domain</label>
+                    <input id="exception-host" placeholder="example.com" required />
+                    <button type="submit">Add exception</button>
+                </form>
+                <ul id="exception-list"></ul>
+            </section>
+            <section>
+                <h2>Protections</h2>
+                <label><input type="checkbox" data-pref="rejectConsent" /> Reject optional cookies and select explicit sale/share opt-outs</label>
+                <label><input type="checkbox" data-pref="doNotSellShare" /> Choose explicit "Do not sell or share" controls</label>
+                <label><input type="checkbox" data-pref="blockThirdParty" /> Reject tracker cookies and partition foreign cookies</label>
+                <label><input type="checkbox" data-pref="removeTrackingParams" /> Remove common tracking parameters from navigation URLs</label>
+                <label><input type="checkbox" data-pref="blockTrackers" /> Enable Firefox tracking protection and block known tracker scripts</label>
+                <label><input type="checkbox" data-pref="doNotTrack" /> Send the Do Not Track request header</label>
+                <label><input type="checkbox" data-pref="fingerprinting" /> Resist browser fingerprinting</label>
+                <label><input type="checkbox" data-pref="blockNotifications" /> Block website notification prompts</label>
+                <label><input type="checkbox" data-pref="blockPopups" /> Block script popups</label>
+                <label><input type="checkbox" data-pref="blockAutoplay" /> Prevent autoplaying audio and video</label>
+                <label><input type="checkbox" data-pref="dismissMarketing" /> Dismiss newsletter and marketing popups</label>
+                <label><input type="checkbox" data-pref="autoReaderMode" /> Automatically open Reader View when Firefox offers it</label>
+                <label><input type="checkbox" data-pref="clearOnTabClose" /> Clear cookies and site data when a tab closes (may sign you out)</label>
+            </section>
+            <section>
+                <h2>Per-site tracker rules</h2>
+                <p>Allowlisted domains bypass automatic consent actions and tracker blocking when used by a page. Blocklisted domains are blocked as third-party resources.</p>
+                <form id="rule-form">
+                    <label for="rule-host">Domain</label>
+                    <input id="rule-host" placeholder="tracker.example" required />
+                    <label for="rule-action">Rule</label>
+                    <select id="rule-action"><option value="allow">Allow</option><option value="block">Block as tracker</option></select>
+                    <button type="submit">Save rule</button>
+                </form>
+                <ul id="rule-list"></ul>
+            </section>
+            <section>
+                <h2>Privacy activity</h2>
+                <p id="activity-summary">No activity recorded yet.</p>
+                <ul id="activity-list" aria-live="polite"></ul>
+                <button id="export" type="button">Export activity log</button>
+                <button id="clear-log" type="button">Clear activity log</button>
+            </section>
+            <output id="status" aria-live="polite"></output>
+        </main>
+        <script src="options.js"></script>
+    </body>
+</html>
