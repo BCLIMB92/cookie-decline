@@ -4,7 +4,7 @@
 }
 
 body {
-    min-width: 240px;
+    min-width: 280px;
     margin: 0;
 }
 
@@ -25,6 +25,28 @@ button {
     width: 100%;
     padding: 8px 12px;
     cursor: pointer;
+}
+
+label, select {
+    display: block;
+    width: 100%;
+}
+
+select {
+    box-sizing: border-box;
+    margin: 6px 0 16px;
+    padding: 8px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+ul {
+    max-height: 120px;
+    overflow: auto;
+    padding-left: 20px;
+    overflow-wrap: anywhere;
 }
 
 output {
